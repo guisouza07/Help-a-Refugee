@@ -1,5 +1,5 @@
-const Alimentacao = "Alimentação"
-const Moradia = "Moradia"
-const Trabalho = "Trabalho"
-
-export { Alimentacao, Moradia, Trabalho}
+export class HelpTypeEnum {
+    static Alimentacao = "Alimentação"
+    static Moradia = "Moradia"
+    static Trabalho = "Trabalho"
+}
