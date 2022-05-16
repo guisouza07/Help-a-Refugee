@@ -17,4 +17,28 @@ export class Interest{
         this._announceDate = announceDate
         this._email = email
     }
+
+    get announcerName(){
+        return this._announcerName
+    }
+
+    get announceDate(){
+        return this._announceDate
+    }
+
+    get email(){
+        return this._email
+    }
+
+    set announcerName(name){
+        this._announcerName = name
+    }
+
+    set announceDate(date){
+        this._announceDate = date
+    }
+
+    set email(email){
+        this._email = email
+    }
 }

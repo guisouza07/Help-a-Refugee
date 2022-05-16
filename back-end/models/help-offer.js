@@ -26,4 +26,44 @@ export class HelpOffer{
         this._helpType = helpType
         this._description = description
     }
+
+    get announcerName(){
+        return this._announcerName
+    }
+
+    get announceDate(){
+        return this._announceDate
+    }
+
+    get location(){
+        return this._location
+    }
+
+    get helpType(){
+        return this._helpType
+    }
+
+    get description(){
+        return this._description
+    }
+
+    set announcerName(name){
+        this._announcerName = name
+    }
+
+    set announceDate(date){
+        this._announceDate = date
+    }
+
+    set location(location){
+        this._location = location
+    }
+
+    set helpType(helpType){
+        this._helpType = helpType
+    }
+
+    set description(description){
+        this._description = description
+    }
 }
