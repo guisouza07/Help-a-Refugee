@@ -1,12 +1,13 @@
-import { Repository } from "./repository";
-import { HelpOffer } from '../models/help-offer'
-import { Interest } from '../models/interest'
+import { Repository } from "./repository.js";
+import { HelpOffer } from '../models/help-offer.js'
+import { Interest } from '../models/interest.js'
 
-export class Volatile extends Repository{
+export class VolatileRepo extends Repository{
     constructor(){
-        this._helpOffers = {}
+        super()
+        this._helpOffers = []
         this._helpOffersMaxId = 0
-        this._interests = {}
+        this._interests = []
         this._interestsMaxId = 0
     }
 
@@ -18,7 +19,10 @@ export class Volatile extends Repository{
             helpOffer.id = this._helpOffersMaxId + 1
             this._helpOffersMaxId += 1
         }
-        this._helpOffers.push(helpOffer)
+        this._helpOffers.push({id: helpOffer.id, announcerName: helpOffer.announcerName,
+                               announceDate: helpOffer.announceDate, location: helpOffer.location,
+                               helpType: helpOffer.helpType, description: helpOffer.description})
+        return helpOffer.id
     }
 
     addInterest(interest){
@@ -31,6 +35,9 @@ export class Volatile extends Repository{
             this._interestMaxId += 1
         }
 
-        this._interests.push(interest)
+        this._interests.push({id: interest.id, announcerName: interest.announcerName,
+                              announceDate: interest.announceDate, email: interest.email,
+                              idHelpOffer: interest.idHelpOffer})
+        return interest.id
     }
 }
