@@ -22,7 +22,7 @@ export class VolatileRepo extends Repository{
         this._helpOffers.push({id: helpOffer.id, announcerName: helpOffer.announcerName,
                                announceDate: helpOffer.announceDate, location: helpOffer.location,
                                helpType: helpOffer.helpType, description: helpOffer.description})
-        return helpOffer.id
+        return this._helpOffersMaxId
     }
 
     addInterest(interest){
@@ -38,6 +38,6 @@ export class VolatileRepo extends Repository{
         this._interests.push({id: interest.id, announcerName: interest.announcerName,
                               announceDate: interest.announceDate, email: interest.email,
                               idHelpOffer: interest.idHelpOffer})
-        return interest.id
+        return this._interestsMaxId
     }
 }

@@ -13,6 +13,6 @@ export class UCAddHelpOffer{
         if (!helpOffer instanceof HelpOffer){
             throw new Error(`Erro método Volatile.addHelpOffer. Tipo de parâmetro errado (${typeof(helpOffer)})`)
         }
-        this._repository.addHelpOffer(helpOffer)
+        return this._repository.addHelpOffer(helpOffer)
     }
 }

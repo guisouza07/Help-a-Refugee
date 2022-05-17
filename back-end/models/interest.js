@@ -46,6 +46,11 @@ export class Interest{
         return this._idHelpOffer
     }
 
+    set id(id){
+        this._id = id
+    }
+
+
     set announcerName(name){
         this._announcerName = name
     }

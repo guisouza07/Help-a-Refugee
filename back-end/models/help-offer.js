@@ -55,6 +55,10 @@ export class HelpOffer{
         return this._description
     }
 
+    set id(id){
+        this._id = id
+    }
+
     set announcerName(name){
         this._announcerName = name
     }

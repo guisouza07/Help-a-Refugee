@@ -13,8 +13,6 @@ export class UCAddInterest{
         if (!interest instanceof Interest){
             throw new Error(`Erro método Volatile.addInterest. Tipo de parâmetro errado (${typeof(interest)})`)
         }
-        newID = this._repository.addInterest(interest)
-
-        return newID
+        return this._repository.addInterest(interest)
     }
 }
