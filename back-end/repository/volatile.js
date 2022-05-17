@@ -31,13 +31,21 @@ export class VolatileRepo extends Repository{
         }
 
         if (interest.id <= 0){
-            interest.id = this._interestMaxId + 1
-            this._interestMaxId += 1
+            interest.id = this._interestsMaxId + 1
+            this._interestsMaxId += 1
         }
 
         this._interests.push({id: interest.id, announcerName: interest.announcerName,
                               announceDate: interest.announceDate, email: interest.email,
                               idHelpOffer: interest.idHelpOffer})
         return this._interestsMaxId
+    }
+
+    getHelpOffers(){
+        return this._helpOffers
+    }
+
+    getInterests(){
+        return this._interests
     }
 }
