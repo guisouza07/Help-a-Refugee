@@ -6,7 +6,7 @@ export class Interest{
         if (!id instanceof Number){
             throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro id (${typeof(id)})`);
         }
-        if (!announceName instanceof String){
+        if (!announcerName instanceof String){
             throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro announceName (${typeof(announceName)})`);
         }
         if (!announceDate instanceof DateTime){
