@@ -45,7 +45,7 @@ export class VolatileRepo extends Repository{
         return this._helpOffers
     }
 
-    getInterests(){
-        return this._interests
+    getInterests(idHelpOffer){
+        return this._interests.filter((value) => {return value.idHelpOffer === idHelpOffer})
     }
 }
