@@ -1,5 +1,5 @@
 export class HelpTypeEnum {
-    static Alimentacao = "Alimentação"
-    static Moradia = "Moradia"
-    static Trabalho = "Trabalho"
+    static Housing = "Housing"
+    static Food = "Food"
+    static Job = "Job"
 }
