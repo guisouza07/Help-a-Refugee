@@ -1,4 +1,5 @@
-import { Repository } from "../repository/repository";
+import { Repository } from "../repository/repository.js";
+import { HelpOffer } from "../models/help-offer.js";
 
 export class UCAddHelpOffer{
     constructor(repository){
