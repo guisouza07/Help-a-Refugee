@@ -2,10 +2,10 @@ import { HelpOffer } from "../models/help-offer.js"
 import { UCAddHelpOffer } from "../usecases/add-help-offer.js"
 import { DateTime } from 'Luxon'
 
-export class CAddHelpOffer{
+export class CPostHelpOffer{
     constructor(ucAddHelpOffer){
         if (!ucAddHelpOffer instanceof UCAddHelpOffer){
-            throw new Error(`Erro CAddHelpOffer. Tipo errado para o parâmetro ucAddHelpOffer (${typeof(ucAddHelpOffer)})`)
+            throw new Error(`Erro CPostHelpOffer. Tipo errado para o parâmetro ucAddHelpOffer (${typeof(ucAddHelpOffer)})`)
         }
         this._ucAddHelpOffer= ucAddHelpOffer
     }

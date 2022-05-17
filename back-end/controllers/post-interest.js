@@ -2,10 +2,10 @@ import { Interest } from "../models/interest.js"
 import { UCAddInterest } from "../usecases/add-interest.js"
 import { DateTime } from 'Luxon'
 
-export class CAddInterest{
+export class CPostInterest{
     constructor(ucAddInterest){
         if (!ucAddInterest instanceof UCAddInterest){
-            throw new Error(`Erro CAddInterest. Tipo errado para o parâmetro ucAddInterest (${typeof(ucAddInterest)})`)
+            throw new Error(`Erro CPostInterest. Tipo errado para o parâmetro ucAddInterest (${typeof(ucAddInterest)})`)
         }
         this._ucAddInterest = ucAddInterest
     }
