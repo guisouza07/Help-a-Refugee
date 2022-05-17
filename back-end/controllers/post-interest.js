@@ -10,16 +10,16 @@ export class CPostInterest{
         this._ucAddInterest = ucAddInterest
     }
 
-    postInterest(req){
+    postInterest(body){
         /*
-            Estrutura da request:
+            Estrutura do body:
             {
                 "announcerName" : "XXXXX",
                 "email" : "email@exemplo.com",
                 "idHelpOffer" : YY
             }
         */
-        const interest = new Interest(-1, req.announcerName, DateTime.now(), req.email, req.idHelpOffer)
+        const interest = new Interest(-1, body.announcerName, DateTime.now(), body.email, body.idHelpOffer)
         return this._ucAddInterest.addInterest(interest)
     }
 }

@@ -8,9 +8,9 @@ export class CGetHelpOffers{
         this._ucConsultHelpOffers = ucConsultHelpOffers
     }
 
-    getHelpOffers(req){
+    getHelpOffers(body){
         /*
-            Estrutura da request:
+            Estrutura do body:
             {
             }
         */

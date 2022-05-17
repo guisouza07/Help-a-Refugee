@@ -10,9 +10,9 @@ export class CPostHelpOffer{
         this._ucAddHelpOffer= ucAddHelpOffer
     }
 
-    postHelpOffer(req){
+    postHelpOffer(body){
         /*
-            Estrutura da request:
+            Estrutura do body:
             {
                 "announcerName" : "XXXXX",
                 "location" : "localização",
@@ -20,7 +20,7 @@ export class CPostHelpOffer{
                 "description" : "descrição"
             }
         */
-        const ho = new HelpOffer(-1, req.announcerName, DateTime.now(), req.location, req.helpType, req.description)
+        const ho = new HelpOffer(-1, body.announcerName, DateTime.now(), body.location, body.helpType, body.description)
 
         return this._ucAddHelpOffer.addHelpOffer(ho)
     }

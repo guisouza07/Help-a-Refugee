@@ -8,13 +8,13 @@ export class CGetInterests{
         this._ucConsultInterests = ucConsultInterests
     }
 
-    getInterest(req){
+    getInterest(body){
         /*
-            Estrutura da request:
+            Estrutura do body:
             {
                 "id" : YY
             }
         */
-        return this._ucConsultInterests.consultInterests(req.id)
+        return this._ucConsultInterests.consultInterests(body.id)
     }
 }

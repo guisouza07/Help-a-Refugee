@@ -33,19 +33,19 @@ const ucConsultHelpOffers = new UCConsultHelpOffer(repo)
 const cGetHelpOffer = new CGetHelpOffers(ucConsultHelpOffers)
 
 app.post('/help-offer', (req, res) => {
-    res.status(201).send(cPostHelpOffer.postHelpOffer(req))
+    res.sendStatus(201).send(cPostHelpOffer.postHelpOffer(req.body))
 })
 
-app.post('/interest', (rew, res) => {
-    res.status(201).send(cPostInterest.postInterest(req))
+app.post('/interest', (req, res) => {
+    res.sendStatus(201).send(cPostInterest.postInterest(req.body))
 })
 
 app.get('/help-offers', (req, res) => {
-    res.status(200).send(cGetHelpOffer.getHelpOffers())
+    res.send(cGetHelpOffer.getHelpOffers(req.body))
 })
 
 app.get('/interests', (req, res) => {
-    res.status(200).send(cGetInterests.getInterest(req))
+    res.send(cGetInterests.getInterest(req.body))
 })
 
 app.listen(8080, () => {
