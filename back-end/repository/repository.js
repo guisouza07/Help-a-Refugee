@@ -27,4 +27,12 @@ export class Repository {
     delInterest(interest){
         throw new Error("Método não implementado (delInterest())")
     }
+
+    getHelpOffers(){
+        throw new Error("Método não implementado (getHelpOffers())")
+    }
+
+    getInterests(idHelpOffer){
+        throw new Error("Método não implementado (getInterests())")
+    }
 }

@@ -1,4 +1,5 @@
-import { Repository } from "../repository/repository";
+import { Repository } from "../repository/repository.js";
+import { HelpOffer } from "../models/help-offer.js";
 
 export class UCAddHelpOffer{
     constructor(repository){
@@ -12,6 +13,6 @@ export class UCAddHelpOffer{
         if (!helpOffer instanceof HelpOffer){
             throw new Error(`Erro método Volatile.addHelpOffer. Tipo de parâmetro errado (${typeof(helpOffer)})`)
         }
-        this._repository.addHelpOffer(helpOffer)
+        return this._repository.addHelpOffer(helpOffer)
     }
 }

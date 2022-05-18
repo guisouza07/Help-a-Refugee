@@ -1,5 +1,5 @@
 import { DateTime } from 'Luxon'
-import { HelpTypeEnum } from '../enums/help-type';
+import { HelpTypeEnum } from '../enums/help-type.js';
 
 export class HelpOffer{
     constructor(id, announcerName, announceDate, location, helpType, description){
@@ -7,7 +7,7 @@ export class HelpOffer{
         if (!id instanceof Number){
             throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro id (${typeof(id)})`);
         }
-        if (!announceName instanceof String){
+        if (!announcerName instanceof String){
             throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announceName (${typeof(announceName)})`);
         }
         if (!announceDate instanceof DateTime){
@@ -53,6 +53,10 @@ export class HelpOffer{
 
     get description(){
         return this._description
+    }
+
+    set id(id){
+        this._id = id
     }
 
     set announcerName(name){
