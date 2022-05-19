@@ -8,10 +8,32 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CadastrarUsuarioComponent implements OnInit {
 
+  listGenero = ['Masculino', 'Feminino'];
+
+  //Dados de Acesso
+  email: String;
+  senha: String;
+  tipoUsuario: string = 'indefinido';
+
+  //Informacoes Pessois
+  nome: String;
+  sobrenome: String;
+  genero: String;
+  idade: Number;
+  paisOrigem: String;
+
+  //Situacao
+  numeroDependentes: String;
+  localizacaoAtual: String;
+  comentariosAdicionais: String;
+
+  //FormField
+  hide: boolean = true;
 
   constructor() {}
 
   ngOnInit() {
+  
   }
 
 }
