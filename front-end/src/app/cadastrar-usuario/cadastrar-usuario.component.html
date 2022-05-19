@@ -1,19 +1,81 @@
 
 <div class="top-line"></div>
-<div class="header" style="text-align: center">
-    <h1>Cadastrar Novo Usuário</h1>
-    <hr class="mini-linha">
-    <h2>solicitante de refúgio</h2>
-</div>
 
-<div class="container">
-    <mat-stepper linear #stepper>
-        <mat-step label="Dados de Acesso">
-        </mat-step>
-        <mat-step label="Informações Pessoais"></mat-step>
-        <mat-step label="Situação"></mat-step>
-    </mat-stepper>
-</div>
+<div style="display: flex;">
+
+    <div class="container-esquerda">
+        <div class="header" style="text-align: center">
+            <h1>Cadastrar Novo Usuário</h1>
+            <hr class="mini-linha">
+            <h2 *ngIf="tipoUsuario === 'indefinido'">Help a Refugee</h2>
+            <h2 *ngIf="tipoUsuario === 'interested'">Solicitante de Refúgio</h2>
+            <h2 *ngIf="tipoUsuario === 'helpOffer'">Voluntário</h2>
+        </div>
+        
+        <div class="container-stepper">
+            <mat-stepper orientation="vertical" #stepper>
+                <mat-step label="Dados de Acesso">
+                    <div class="container-mat-form">
+                        <mat-form-field appearance="legacy">
+                            <mat-label>email</mat-label>
+                            <input matInput type="email">
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>senha</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <div class="container-mat-radio">
+                            <mat-radio-group color="primary" [(ngModel)]="tipoUsuario">
+                                <mat-radio-button value="interested" style="margin-right: 30px;">Solicitante</mat-radio-button>
+                                <mat-radio-button value="helpOffer">Voluntário</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>  
+                    <button class="botaoProximo" mat-button matStepperNext color="primary">Próximo</button>  
+                </mat-step>
+                <mat-step label="Informações Pessoais">
+                    <div class="container-mat-form">
+                        <mat-form-field appearance="legacy">
+                            <mat-label>nome</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>sobrenome</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                        <mat-form-field class="inputNumero" appearance="legacy">
+                            <mat-label>idade</mat-label>
+                            <input matInput type="number">
+                        </mat-form-field>
+                        <mat-form-field class="inputGenero" appearance="legacy">
+                            <mat-label>gênero</mat-label>
+                            <mat-select>
+                              <mat-option *ngFor="let genero of listGenero" value="{{genero}}">{{genero}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                    <button class="botaoProximo" mat-button matStepperNext color="primary">Próximo</button>  
+                </mat-step>
+                    
+                <mat-step label="Situação">
+                    <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                    <button class="botaoProximo" mat-button color="primary">Cadastrar</button>  
+                </mat-step>
+            </mat-stepper>
+        </div>
+    </div>
+
+    <div class="container-direita">
+        nada
+    </div>
+
+</div>  
+
+
 
 
 
