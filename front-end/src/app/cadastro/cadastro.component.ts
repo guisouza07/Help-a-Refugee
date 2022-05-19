@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { dateInputsHaveChanged } from '@angular/material/datepicker/datepicker-input-base';
+import { never } from 'rxjs';
 
 @Component({
-  selector: 'app-cadastrar-usuario',
-  templateUrl: './cadastrar-usuario.component.html',
-  styleUrls: ['./cadastrar-usuario.component.css']
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.component.html',
+  styleUrls: ['./cadastro.component.css']
 })
-export class CadastrarUsuarioComponent implements OnInit {
+export class CadastroComponent implements OnInit {
 
   listGenero = ['Masculino', 'Feminino'];
 
-  //Dados de Acesso
-  email: String;
-  senha: String;
+  //Tipo Usuario
   tipoUsuario: string = 'indefinido';
 
   //Informacoes Pessois
@@ -29,6 +29,10 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   //FormField
   hide: boolean = true;
+
+  //Calendario
+  minDate = new Date(1922, 1, 1);
+  maxDate = new Date(2012, 1, 1);
 
   constructor() {}
 
