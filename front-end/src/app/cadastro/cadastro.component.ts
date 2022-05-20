@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { dateInputsHaveChanged } from '@angular/material/datepicker/datepicker-input-base';
-import { never } from 'rxjs';
 
 @Component({
   selector: 'app-cadastro',
