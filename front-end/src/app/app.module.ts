@@ -8,6 +8,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -31,6 +32,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     FormsModule,
     MatButtonModule,
     MatDatepickerModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
