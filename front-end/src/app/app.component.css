@@ -1,0 +1,19 @@
+.top-line{
+    width: 100%;
+    height: 0.5em;
+    background-color: #FFF700;
+}
+
+.container-esquerda{
+    display: block;
+    width: 45%;
+    margin: 0;
+}
+
+.container-direita{
+    width: 55%;
+    display: block;
+    margin-top: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
