@@ -11,6 +11,7 @@ import { never } from 'rxjs';
 export class CadastroComponent implements OnInit {
 
   listGenero = ['Masculino', 'Feminino'];
+  listTipoAjuda = ['Moradia', 'Comida', 'Emprego']
 
   //Tipo Usuario
   tipoUsuario: string = 'indefinido';

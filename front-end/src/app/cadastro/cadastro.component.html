@@ -46,7 +46,7 @@
                         <mat-select>
                             <mat-option *ngFor="let genero of listGenero" value="{{genero}}">{{genero}}</mat-option>
                         </mat-select>
-                        </mat-form-field>
+                    </mat-form-field>
                 </div>
                 <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
                 <button class="botaoProximo" mat-button matStepperNext color="primary">Próximo</button>  
@@ -58,10 +58,27 @@
                 <button class="botaoProximo" mat-button color="primary">Selecionar</button>  
             </mat-step>
             <mat-step label="Cadastrar Ajuda" ng *ngIf="tipoUsuario === 'helpOffer'">
-                
+                <div class="container-mat-form">
+                    <mat-form-field class="inputTipoAjuda" appearance="legacy">
+                        <mat-label>tipo de ajuda</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let tipoAjuda of listTipoAjuda" value="{{tipoAjuda}}">{{tipoAjuda}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>localização</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <mat-form-field class="textAreaDescricao" appearance="legacy">
+                        <mat-label>Descrição da Ajuda</mat-label>
+                        <textarea matInput rows="5" placeholder="Descreva aqui como você pretende ajudar"></textarea>
+                        <mat-hint>Deixe também comentários adicionais que achar importante</mat-hint>
+                    </mat-form-field>
+                </div>
                 <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
                 <button class="botaoProximo" mat-button color="primary">Cadastrar</button>  
-            </mat-step>
+            </mat-step>    
+            
             <mat-step label="Bloqueado" ng *ngIf="tipoUsuario === 'indefinido'">
                 <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
             </mat-step>
