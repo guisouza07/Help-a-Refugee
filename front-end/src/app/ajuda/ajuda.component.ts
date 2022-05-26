@@ -9,9 +9,8 @@ import { Ajuda } from '../models/ajuda';
 })
 export class AjudaComponent implements OnInit {
 
-  listAjuda: Ajuda[];
 
-  constructor(ajudaService: AjudaService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
