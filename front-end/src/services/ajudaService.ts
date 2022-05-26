@@ -4,9 +4,7 @@ import { Ajuda } from "src/app/models/ajuda";
 export class AjudaService{
 
     getAjuda(): Array<Ajuda> {
-        let listAjuda = new Array<Ajuda>;
-
-        return listAjuda;
+        throw new Error("Not Implemented");
     }
 
 }
