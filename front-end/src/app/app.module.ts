@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -40,7 +40,8 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     MatRadioModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatStepperModule
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
