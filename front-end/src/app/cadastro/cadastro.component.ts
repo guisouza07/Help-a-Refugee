@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro',
@@ -13,29 +14,38 @@ export class CadastroComponent implements OnInit {
   //Tipo Usuario
   tipoUsuario: string = 'indefinido';
 
-  //Informacoes Pessois
-  nome: String;
-  sobrenome: String;
-  genero: String;
-  idade: Number;
-  paisOrigem: String;
-
-  //Situacao
-  numeroDependentes: String;
-  localizacaoAtual: String;
-  comentariosAdicionais: String;
-
-  //FormField
-  hide: boolean = true;
-
   //Calendario
   minDate = new Date(1922, 1, 1);
   maxDate = new Date(2012, 1, 1);
 
-  constructor() {}
+  //Forms
+  formInformacoesPessoais: FormGroup
+  formAjuda: FormGroup
+
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-  
+    this.formInformacoesPessoais = this.formBuilder.group({
+      nome:[''],
+      sobrenome:[''],
+      email:[''],
+      dataNascimento:[''],
+      genero:['']
+    });
+
+    this.formAjuda = this.formBuilder.group({
+      tipoAjuda:[''],
+      localizacao:[''],
+      descricao:['']
+    });
+  }
+
+  onSubmitInformacoesPessoais(){
+    console.log(this.formInformacoesPessoais.value)
+  }
+
+  onSubmitAjuda(){
+    console.log(this.formAjuda.value)
   }
 
 }
