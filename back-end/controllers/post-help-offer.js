@@ -20,7 +20,7 @@ export class CPostHelpOffer{
                 "helpType" : "Housing" / "Job" / "Food",
                 "description" : "descrição",
                 "email" : "email@exemplo.com",
-                "sex" : "M"
+                "sex" : "M",
                 "announcerBirth" : "ZZZZZZZ"
             }
         */
