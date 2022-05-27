@@ -9,6 +9,7 @@ import { Ajuda } from '../models/ajuda';
 })
 export class AjudaComponent implements OnInit {
 
+  aberto: boolean = true;
 
   constructor() { }
 
