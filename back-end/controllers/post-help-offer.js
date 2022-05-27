@@ -21,7 +21,7 @@ export class CPostHelpOffer{
                 "description" : "descrição",
                 "email" : "email@exemplo.com",
                 "sex" : "M",
-                "announcerBirth" : "ZZZZZZZ"
+                "announcerBirth" : "2022-05-27T19:53:17.488-03:00"
             }
         */
         const ho = new HelpOffer(-1, body.announcerName, body.announcerSirName,

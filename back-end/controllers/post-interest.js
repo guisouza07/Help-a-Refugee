@@ -19,7 +19,7 @@ export class CPostInterest{
                 "email" : "email@exemplo.com",
                 "idHelpOffer" : YY,
                 "sex" : "M",
-                "announcerBirth" : "ZZZZZZZ"
+                "announcerBirth" : "2022-05-27T19:53:17.488-03:00"
             }
         */
         const interest = new Interest(-1, body.announcerName, 

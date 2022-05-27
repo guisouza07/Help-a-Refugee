@@ -36,7 +36,7 @@ export class VolatileRepo extends Repository{
             this._interestsMaxId += 1
         }
 
-        this._interests.push({id: interest.id, announcerName: interest.announcerName, announcerSirName: helpOffer.announcerSirName,
+        this._interests.push({id: interest.id, announcerName: interest.announcerName, announcerSirName: interest.announcerSirName,
                               announceDate: interest.announceDate, email: interest.email,
                               idHelpOffer: interest.idHelpOffer, sex: interest.sex, announcerBirth: interest.announcerBirth})
         return this._interestsMaxId
