@@ -15,12 +15,18 @@ export class CPostHelpOffer{
             Estrutura do body:
             {
                 "announcerName" : "XXXXX",
+                "announcerSirName" : "XXXXX",
                 "location" : "localização",
                 "helpType" : "Housing" / "Job" / "Food",
-                "description" : "descrição"
+                "description" : "descrição",
+                "email" : "email@exemplo.com",
+                "sex" : "M"
+                "announcerBirth" : "ZZZZZZZ"
             }
         */
-        const ho = new HelpOffer(-1, body.announcerName, DateTime.now(), body.location, body.helpType, body.description)
+        const ho = new HelpOffer(-1, body.announcerName, body.announcerSirName,
+            DateTime.now(), body.location, body.helpType, 
+            body.description, body.email, body.sex, body.announcerBirth)
 
         return this._ucAddHelpOffer.addHelpOffer(ho)
     }

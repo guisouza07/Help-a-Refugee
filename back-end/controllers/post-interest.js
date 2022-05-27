@@ -15,11 +15,17 @@ export class CPostInterest{
             Estrutura do body:
             {
                 "announcerName" : "XXXXX",
+                "announcerSirName" : "XXXXX",
                 "email" : "email@exemplo.com",
-                "idHelpOffer" : YY
+                "idHelpOffer" : YY,
+                "sex" : "M"
+                "announcerBirth" : "ZZZZZZZ"
             }
         */
-        const interest = new Interest(-1, body.announcerName, DateTime.now(), body.email, body.idHelpOffer)
+        const interest = new Interest(-1, body.announcerName, 
+                                    body.announcerSirName, DateTime.now(), 
+                                    body.email, body.idHelpOffer,
+                                    body.sex, body.announcerBirth)
         return this._ucAddInterest.addInterest(interest)
     }
 }
