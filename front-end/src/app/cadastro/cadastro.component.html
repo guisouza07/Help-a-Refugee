@@ -1,0 +1,102 @@
+<div class="container-esquerda">
+    <div class="header" style="text-align: center">
+        <h1>Help a Refugee</h1>
+        <hr class="mini-linha">
+        <h2 *ngIf="tipoUsuario === 'indefinido'">Ajude o mundo a ser um lugar melhor</h2>
+        <h2 *ngIf="tipoUsuario === 'interested'">Solicitante de Refúgio</h2>
+        <h2 *ngIf="tipoUsuario === 'helpOffer'">Voluntário</h2>
+    </div>
+    
+    <div class="container-stepper">
+        <mat-stepper linear="true" orientation="vertical" #stepper>
+            <mat-step label="Quem é você ?">
+                <div class="container-mat-form">
+                    <div class="container-mat-radio">
+                        <mat-radio-group color="primary" [(ngModel)]="tipoUsuario">
+                            <mat-radio-button value="interested" style="margin-right: 30px;">Busco por Ajuda</mat-radio-button>
+                            <mat-radio-button value="helpOffer">Sou voluntário</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>  
+                <button class="botaoProximo" mat-button matStepperNext color="primary">Próximo</button>  
+            </mat-step>
+
+            <!--Segundo Passo-->
+            
+            <mat-step label="Informações Pessoais" *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formInformacoesPessoais">
+                <form [formGroup]="formInformacoesPessoais" (ngSubmit)="onSubmitInformacoesPessoais()">
+                    <div class="container-mat-form">                 
+                        <mat-form-field appearance="legacy">
+                            <mat-label>nome</mat-label>
+                            <input matInput formControlName="nome" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>sobrenome</mat-label>
+                            <input matInput formControlName="sobrenome" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>email</mat-label>
+                            <input matInput formControlName="email" required>
+                        </mat-form-field>
+                        <mat-form-field class="dataPicker" appearance="legacy">
+                            <input matInput type="" [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate" formControlName="dataNascimento" required>
+                            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker> 
+                        </mat-form-field>
+                        <mat-form-field class="inputGenero" appearance="legacy">
+                            <mat-label>gênero</mat-label>
+                            <mat-select formControlName="genero">
+                                <mat-option *ngFor="let genero of listGenero" value="{{genero}}">{{genero}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>  
+                    </div>
+                    <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                    <button class="botaoProximo" type="submit" mat-button matStepperNext color="primary">Próximo</button>  
+                </form>
+            </mat-step>
+
+            <!--Terceiro passo-->
+            <mat-step label="Buscar por Ajuda" ng *ngIf="tipoUsuario === 'interested'">
+                <p>IMPLEMENTAR ESCOLHA DE AJUDA</p>
+                <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                <button class="botaoProximo" mat-button color="primary">Selecionar</button>  
+            </mat-step>
+
+            <mat-step label="Cadastrar Ajuda" ng *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formAjuda">
+                <form [formGroup]="formAjuda" (ngSubmit)="onSubmitAjuda()">
+                    <div class="container-mat-form">
+                        <mat-form-field class="inputTipoAjuda" appearance="legacy">
+                            <mat-label>tipo de ajuda</mat-label>
+                            <mat-select formControlName="tipoAjuda" required>
+                                <mat-option *ngFor="let tipoAjuda of listTipoAjuda" value="{{tipoAjuda}}">{{tipoAjuda}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>localização</mat-label>
+                            <input matInput type="text" formControlName="localizacao" required>
+                        </mat-form-field>
+                        <mat-form-field class="textAreaDescricao" appearance="legacy">
+                            <mat-label>Descrição da Ajuda</mat-label>
+                            <textarea matInput rows="5" placeholder="Descreva aqui como você pretende ajudar" formControlName="descricao" required></textarea>
+                            <mat-hint>Deixe também comentários adicionais que achar importante</mat-hint>
+                        </mat-form-field>                   
+                    </div>    
+                <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                <button class="botaoProximo" mat-button color="primary">Cadastrar</button>  
+                </form>
+            </mat-step>    
+            
+            <mat-step label="Bloqueado" ng *ngIf="tipoUsuario === 'indefinido'">
+                <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+            </mat-step>
+
+        </mat-stepper>
+    </div>
+</div>
+
+
+
+
+
+
+
