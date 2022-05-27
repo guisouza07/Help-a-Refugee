@@ -18,7 +18,7 @@ export class CPostInterest{
                 "announcerSirName" : "XXXXX",
                 "email" : "email@exemplo.com",
                 "idHelpOffer" : YY,
-                "sex" : "M"
+                "sex" : "M",
                 "announcerBirth" : "ZZZZZZZ"
             }
         */
