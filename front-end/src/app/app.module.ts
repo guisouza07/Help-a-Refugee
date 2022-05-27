@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule }  from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -20,6 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AjudaComponent } from './ajuda/ajuda.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatDatepickerModule,
     MatExpansionModule,

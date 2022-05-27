@@ -23,23 +23,23 @@
 
             <!--Segundo Passo-->
             
-            <mat-step label="Informações Pessoais" *ngIf="tipoUsuario === 'helpOffer'">
+            <mat-step label="Informações Pessoais" *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formInformacoesPessoais">
                 <form [formGroup]="formInformacoesPessoais" (ngSubmit)="onSubmitInformacoesPessoais()">
                     <div class="container-mat-form">                 
                         <mat-form-field appearance="legacy">
                             <mat-label>nome</mat-label>
-                            <input matInput formControlName="nome">
+                            <input matInput formControlName="nome" required>
                         </mat-form-field>
                         <mat-form-field appearance="legacy">
                             <mat-label>sobrenome</mat-label>
-                            <input matInput formControlName="sobrenome">
+                            <input matInput formControlName="sobrenome" required>
                         </mat-form-field>
                         <mat-form-field appearance="legacy">
                             <mat-label>email</mat-label>
-                            <input matInput formControlName="email">
+                            <input matInput formControlName="email" required>
                         </mat-form-field>
                         <mat-form-field class="dataPicker" appearance="legacy">
-                            <input matInput [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate" formControlName="dataNascimento">
+                            <input matInput type="" [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate" formControlName="dataNascimento" required>
                             <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
                             <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker> 
                         </mat-form-field>
@@ -62,22 +62,22 @@
                 <button class="botaoProximo" mat-button color="primary">Selecionar</button>  
             </mat-step>
 
-            <mat-step label="Cadastrar Ajuda" ng *ngIf="tipoUsuario === 'helpOffer'">
+            <mat-step label="Cadastrar Ajuda" ng *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formAjuda">
                 <form [formGroup]="formAjuda" (ngSubmit)="onSubmitAjuda()">
                     <div class="container-mat-form">
                         <mat-form-field class="inputTipoAjuda" appearance="legacy">
                             <mat-label>tipo de ajuda</mat-label>
-                            <mat-select formControlName="tipoAjuda">
+                            <mat-select formControlName="tipoAjuda" required>
                                 <mat-option *ngFor="let tipoAjuda of listTipoAjuda" value="{{tipoAjuda}}">{{tipoAjuda}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field appearance="legacy">
                             <mat-label>localização</mat-label>
-                            <input matInput type="text" formControlName="localizacao">
+                            <input matInput type="text" formControlName="localizacao" required>
                         </mat-form-field>
                         <mat-form-field class="textAreaDescricao" appearance="legacy">
                             <mat-label>Descrição da Ajuda</mat-label>
-                            <textarea matInput rows="5" placeholder="Descreva aqui como você pretende ajudar" formControlName="descricao"></textarea>
+                            <textarea matInput rows="5" placeholder="Descreva aqui como você pretende ajudar" formControlName="descricao" required></textarea>
                             <mat-hint>Deixe também comentários adicionais que achar importante</mat-hint>
                         </mat-form-field>                   
                     </div>    
