@@ -46,7 +46,7 @@
                         <mat-form-field class="inputGenero" appearance="legacy">
                             <mat-label>gênero</mat-label>
                             <mat-select formControlName="genero">
-                                <mat-option *ngFor="let genero of listGenero" value="{{genero}}">{{genero}}</mat-option>
+                                <mat-option *ngFor="let genero of listGenero" value="{{genero.charAt(0)}}">{{genero}}</mat-option>
                             </mat-select>
                         </mat-form-field>  
                     </div>
