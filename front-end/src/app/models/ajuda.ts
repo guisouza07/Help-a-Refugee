@@ -2,10 +2,13 @@ export class Ajuda{
 
     constructor(){}
 
-    nome: string
+    announcerName: string
+    announcerSirName: string
     email: string
-    localizacao: string
-    tipoAjuda: string
-    descricao: string
+    location: string
+    helpType: string
+    description: string
+    sex: string
+    announcerBirth: string
     
 }

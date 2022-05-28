@@ -50,14 +50,17 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmitInformacoesPessoais(){
-    this.ajuda.nome = this.formInformacoesPessoais.value.nome
+    this.ajuda.announcerName = this.formInformacoesPessoais.value.nome
+    this.ajuda.announcerSirName = this.formInformacoesPessoais.value.sobrenome
     this.ajuda.email = this.formInformacoesPessoais.value.email
+    this.ajuda.announcerBirth = this.formInformacoesPessoais.value.dataNascimento
+    this.ajuda.sex = this.formInformacoesPessoais.value.genero
   }
 
   onSubmitAjuda(){
-    this.ajuda.tipoAjuda = this.formAjuda.value.tipoAjuda
-    this.ajuda.localizacao = this.formAjuda.value.localizacao
-    this.ajuda.descricao = this.formAjuda.value.descricao
+    this.ajuda.helpType = this.formAjuda.value.tipoAjuda
+    this.ajuda.location = this.formAjuda.value.localizacao
+    this.ajuda.description = this.formAjuda.value.descricao
     this.ajudaService.create(this.ajuda)
   }
 
