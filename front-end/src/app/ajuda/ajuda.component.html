@@ -1,17 +1,22 @@
-<mat-accordion>
-    <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title >
-            <mat-icon  class="setinha">keyboard_arrow_right</mat-icon>
-            Tipo Ajuda
-          </mat-panel-title>
-          <mat-panel-description>
-            Localização
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>nome</p>
-        <p>email</p>
-        <p>descricao</p>
-      </mat-expansion-panel>
-</mat-accordion>
+
+  <mat-accordion *ngFor="let ajuda of ajudas" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title >
+          {{ajuda.id}}  - {{ajuda.helpType}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ajuda.location}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+        <p>{{ajuda.announcerName}}</p>
+        <p>{{ajuda.email}}</p>
+        <p>{{ajuda.description}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+
+
 
