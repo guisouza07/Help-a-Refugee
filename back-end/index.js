@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { UCAddHelpOffer } from './usecases/add-help-offer.js'
 import { UCAddInterest } from './usecases/add-interest.js'
 import { UCConsultInterest } from './usecases/consult-interests.js'
@@ -16,6 +17,7 @@ import { CGetHelpOffers } from './controllers/get-help-offer.js'
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 
 const repo = new VolatileRepo() //Define o tipo de repositório a ser usado
