@@ -23,7 +23,7 @@
 
             <!--Segundo Passo-->
             
-            <mat-step label="Informações Pessoais" *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formInformacoesPessoais">
+            <mat-step label="Informações Pessoais" *ngIf="tipoUsuario !=='indefinido'" [stepControl]="formInformacoesPessoais">
                 <form [formGroup]="formInformacoesPessoais" (ngSubmit)="onSubmitInformacoesPessoais()">
                     <div class="container-mat-form">                 
                         <mat-form-field appearance="legacy">
@@ -39,27 +39,35 @@
                             <input matInput formControlName="email" required>
                         </mat-form-field>
                         <mat-form-field class="dataPicker" appearance="legacy">
-                            <input matInput type="" [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate" formControlName="dataNascimento" required>
+                            <input matInput type="" [matDatepicker]="myDatePicker" [min]="minDate" [max]="maxDate" formControlName="dataNascimento" required placeholder="Nascimento">
                             <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
                             <mat-datepicker #myDatePicker startView="multi-year"></mat-datepicker> 
                         </mat-form-field>
                         <mat-form-field class="inputGenero" appearance="legacy">
                             <mat-label>gênero</mat-label>
                             <mat-select formControlName="genero">
-                                <mat-option *ngFor="let genero of listGenero" value="{{genero.charAt(0)}}">{{genero}}</mat-option>
+                                <mat-option *ngFor="let genero of listGenero" value="{{genero}}">{{genero}}</mat-option>
                             </mat-select>
                         </mat-form-field>  
                     </div>
                     <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
-                    <button class="botaoProximo" type="submit" mat-button matStepperNext color="primary">Próximo</button>  
+                    <button class="botaoProximo" type="submit" mat-button matStepperNext color="primary" [disabled]="!formInformacoesPessoais.valid">Próximo</button>  
                 </form>
             </mat-step>
 
             <!--Terceiro passo-->
             <mat-step label="Buscar por Ajuda" ng *ngIf="tipoUsuario === 'interested'">
-                <p>IMPLEMENTAR ESCOLHA DE AJUDA</p>
-                <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
-                <button class="botaoProximo" mat-button color="primary">Selecionar</button>  
+                <form [formGroup]="formInteressado" (ngSubmit)="onSubmitInteressado()">
+                    <div class="container-mat-form">
+                        <mat-form-field appearance="legacy">
+                            <p>Insira o número da ajuda que o interessou</p>
+                            <input matInput type="number" formControlName="idAjuda" required>
+                            <mat-hint>Apenas um número por solicitação</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                    <button class="botaoProximo" type="submite" mat-button color="primary" [disabled]="!formInteressado.valid">Selecionar</button>  
+                </form>
             </mat-step>
 
             <mat-step label="Cadastrar Ajuda" ng *ngIf="tipoUsuario === 'helpOffer'" [stepControl]="formAjuda">
@@ -81,8 +89,8 @@
                             <mat-hint>Deixe também comentários adicionais que achar importante</mat-hint>
                         </mat-form-field>                   
                     </div>    
-                <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
-                <button class="botaoProximo" mat-button color="primary">Cadastrar</button>  
+                    <button class="botaoProximo" mat-button matStepperPrevious color="primary">Voltar</button>  
+                    <button class="botaoProximo" type="submit" mat-button color="primary" [disabled]="!formAjuda.valid">Cadastrar</button> 
                 </form>
             </mat-step>    
             

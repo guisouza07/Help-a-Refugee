@@ -1,13 +1,11 @@
-export class Ajuda{
+export class InteressadoRequest{
 
     constructor(){}
 
     announcerName: string
     announcerSirName: string
     email: string
-    location: string
-    helpType: string
-    description: string
+    idHelpOffer: number
     sex: string
     announcerBirth: string
     

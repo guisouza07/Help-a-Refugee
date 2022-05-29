@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Ajuda } from '../models/ajuda';
+import { AjudaRequest } from '../models/ajudaRequest';
 import { AjudaService } from 'src/services/ajudaService';
+import { InteressadoRequest } from '../models/interessadoRequest';
+import { InteressadoService } from 'src/services/interessadoService';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,8 +12,8 @@ import { AjudaService } from 'src/services/ajudaService';
 })
 export class CadastroComponent implements OnInit {
 
-  listGenero = ['Masculino', 'Feminino'];
-  listTipoAjuda = ['Moradia', 'Comida', 'Emprego']
+  listGenero = ['Masculino', 'Feminino', 'Outro'];
+  listTipoAjuda = ['Moradia', 'Comida', 'Emprego', 'Outro']
 
   //Tipo Usuario
   tipoUsuario: string = 'indefinido';
@@ -23,16 +25,20 @@ export class CadastroComponent implements OnInit {
   //Forms
   formInformacoesPessoais: FormGroup;
   formAjuda: FormGroup;
+  formInteressado: FormGroup;
   cadastroAjudaHabilitado: boolean = false;
 
-  ajuda: Ajuda;
+  ajuda: AjudaRequest;
+  interessado: InteressadoRequest;
 
   constructor(
     private formBuilder: FormBuilder,
-    private ajudaService: AjudaService) {}
+    private ajudaService: AjudaService,
+    private interessadoService: InteressadoService) {}
 
   ngOnInit() {  
-    this.ajuda = new Ajuda();
+    this.ajuda = new AjudaRequest();
+    this.interessado = new InteressadoRequest();
 
     this.formInformacoesPessoais = this.formBuilder.group({
       nome:['', Validators.required],
@@ -47,14 +53,28 @@ export class CadastroComponent implements OnInit {
       localizacao:['', Validators.required],
       descricao:['', Validators.required]
     });
+
+    this.formInteressado = this.formBuilder.group({
+      idAjuda:['', Validators.required]
+    })
   }
 
   onSubmitInformacoesPessoais(){
-    this.ajuda.announcerName = this.formInformacoesPessoais.value.nome
-    this.ajuda.announcerSirName = this.formInformacoesPessoais.value.sobrenome
-    this.ajuda.email = this.formInformacoesPessoais.value.email
-    this.ajuda.announcerBirth = this.formInformacoesPessoais.value.dataNascimento
-    this.ajuda.sex = this.formInformacoesPessoais.value.genero
+    if(this.tipoUsuario === 'helpOffer'){
+      this.ajuda.announcerName = this.formInformacoesPessoais.value.nome
+      this.ajuda.announcerSirName = this.formInformacoesPessoais.value.sobrenome
+      this.ajuda.email = this.formInformacoesPessoais.value.email
+      this.ajuda.announcerBirth = this.formInformacoesPessoais.value.dataNascimento
+      this.ajuda.sex = this.formInformacoesPessoais.value.genero
+    }
+    else{
+      this.interessado.announcerName = this.formInformacoesPessoais.value.nome
+      this.interessado.announcerSirName = this.formInformacoesPessoais.value.sobrenome
+      this.interessado.email = this.formInformacoesPessoais.value.email
+      this.interessado.announcerBirth = this.formInformacoesPessoais.value.dataNascimento
+      this.interessado.sex = this.formInformacoesPessoais.value.genero
+    }
+    
   }
 
   onSubmitAjuda(){
@@ -62,6 +82,11 @@ export class CadastroComponent implements OnInit {
     this.ajuda.location = this.formAjuda.value.localizacao
     this.ajuda.description = this.formAjuda.value.descricao
     this.ajudaService.create(this.ajuda)
+  }
+
+  onSubmitInteressado(){
+    this.interessado.idHelpOffer = this.formInteressado.value.idAjuda
+    this.interessadoService.create(this.interessado)
   }
 
 }
