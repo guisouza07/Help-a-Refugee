@@ -5,6 +5,7 @@ import { UCAddInterest } from './usecases/add-interest.js'
 import { UCConsultInterest } from './usecases/consult-interests.js'
 import { UCConsultHelpOffer } from './usecases/consult-help-offers.js'
 import { VolatileRepo } from './repository/volatile.js'
+import { MongoDB } from './repository/mongodb.js'
 import { HelpOffer } from './models/help-offer.js'
 import { Interest } from './models/interest.js'
 import { DateTime } from 'Luxon'
@@ -20,7 +21,7 @@ app.use(express.json())
 app.use(cors())
 
 
-const repo = new VolatileRepo() //Define o tipo de repositório a ser usado
+const repo = new MongoDB() //Define o tipo de repositório a ser usado
 
 const ucAddInterest = new UCAddInterest(repo)
 const cPostInterest = new CPostInterest(ucAddInterest)

@@ -3,9 +3,6 @@ import { DateTime } from 'Luxon'
 export class Interest{
     constructor(id, announcerName, announcerSirName, announceDate, email, idHelpOffer, sex, announcerBirth){
         //Validações de parâmetros
-        if (!id instanceof Number){
-            throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro id (${typeof(id)})`);
-        }
         if (!announcerName instanceof String){
             throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro announceName (${typeof(announceName)})`);
         }
