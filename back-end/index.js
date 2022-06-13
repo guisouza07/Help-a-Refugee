@@ -21,7 +21,7 @@ app.use(express.json())
 app.use(cors())
 
 
-const repo = new VolatileRepo() //Define o tipo de repositório a ser usado
+const repo = new MongoDB() //Define o tipo de repositório a ser usado
 
 const ucAddInterest = new UCAddInterest(repo)
 const cPostInterest = new CPostInterest(ucAddInterest)
