@@ -11,7 +11,7 @@ export class VolatileRepo extends Repository{
         this._interestsMaxId = 0
     }
 
-    addHelpOffer(helpOffer){
+    async addHelpOffer(helpOffer){
         if (!helpOffer instanceof HelpOffer){
             throw new Error(`Erro método Volatile.addHelpOffer. Tipo de parâmetro errado (${typeof(helpOffer)})`)
         }
@@ -26,7 +26,7 @@ export class VolatileRepo extends Repository{
         return this._helpOffersMaxId
     }
 
-    addInterest(interest){
+    async addInterest(interest){
         if (!interest instanceof Interest){
             throw new Error(`Erro método Volatile.addInterest. Tipo de parâmetro errado (${typeof(interest)})`)
         }
@@ -42,11 +42,11 @@ export class VolatileRepo extends Repository{
         return this._interestsMaxId
     }
 
-    getHelpOffers(){
+    async getHelpOffers(){
         return this._helpOffers
     }
 
-    getInterests(idHelpOffer){
+    async getInterests(idHelpOffer){
         return this._interests.filter((value) => {return value.idHelpOffer === idHelpOffer})
     }
 }

@@ -8,7 +8,7 @@ export class UCConsultHelpOffer{
         this._repository = repository
     }
 
-    consultHelpOffers(){
-        return this._repository.getHelpOffers()
+    async consultHelpOffers(){
+        return await this._repository.getHelpOffers()
     }
 }

@@ -10,7 +10,7 @@ export class CPostHelpOffer{
         this._ucAddHelpOffer= ucAddHelpOffer
     }
 
-    postHelpOffer(body){
+    async postHelpOffer(body){
         /*
             Estrutura do body:
             {
@@ -28,6 +28,6 @@ export class CPostHelpOffer{
             DateTime.now(), body.location, body.helpType, 
             body.description, body.email, body.sex, body.announcerBirth)
 
-        return this._ucAddHelpOffer.addHelpOffer(ho)
+        return await this._ucAddHelpOffer.addHelpOffer(ho)
     }
 }

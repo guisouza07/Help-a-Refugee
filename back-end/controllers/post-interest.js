@@ -10,7 +10,7 @@ export class CPostInterest{
         this._ucAddInterest = ucAddInterest
     }
 
-    postInterest(body){
+    async postInterest(body){
         /*
             Estrutura do body:
             {
@@ -26,6 +26,6 @@ export class CPostInterest{
                                     body.announcerSirName, DateTime.now(), 
                                     body.email, body.idHelpOffer,
                                     body.sex, body.announcerBirth)
-        return this._ucAddInterest.addInterest(interest)
+        return await this._ucAddInterest.addInterest(interest)
     }
 }
