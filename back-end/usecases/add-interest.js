@@ -9,10 +9,10 @@ export class UCAddInterest{
         this._repository = repository
     }
 
-    addInterest(interest){
+    async addInterest(interest){
         if (!interest instanceof Interest){
             throw new Error(`Erro método Volatile.addInterest. Tipo de parâmetro errado (${typeof(interest)})`)
         }
-        return this._repository.addInterest(interest)
+        return await this._repository.addInterest(interest)
     }
 }

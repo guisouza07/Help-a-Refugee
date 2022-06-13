@@ -4,9 +4,6 @@ import { HelpTypeEnum } from '../enums/help-type.js';
 export class HelpOffer{
     constructor(id, announcerName, announcerSirName, announceDate, location, helpType, description, email, sex, announcerBirth){
         //Validações de parâmetros
-        if (!id instanceof Number){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro id (${typeof(id)})`);
-        }
         if (!announcerName instanceof String){
             throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerName (${typeof(announcerName)})`);
         }

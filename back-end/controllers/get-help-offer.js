@@ -8,12 +8,12 @@ export class CGetHelpOffers{
         this._ucConsultHelpOffers = ucConsultHelpOffers
     }
 
-    getHelpOffers(body){
+    async getHelpOffers(body){
         /*
             Estrutura do body:
             {
             }
         */
-        return this._ucConsultHelpOffers.consultHelpOffers()
+        return await this._ucConsultHelpOffers.consultHelpOffers()
     }
 }

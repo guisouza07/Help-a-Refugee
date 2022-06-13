@@ -9,10 +9,10 @@ export class UCAddHelpOffer{
         this._repository = repository
     }
 
-    addHelpOffer(helpOffer){
+    async addHelpOffer(helpOffer){
         if (!helpOffer instanceof HelpOffer){
             throw new Error(`Erro método Volatile.addHelpOffer. Tipo de parâmetro errado (${typeof(helpOffer)})`)
         }
-        return this._repository.addHelpOffer(helpOffer)
+        return await this._repository.addHelpOffer(helpOffer)
     }
 }

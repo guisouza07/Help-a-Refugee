@@ -12,27 +12,27 @@ export class Repository {
         }
     }
 
-    addHelpOffer(helpOffer){
+    async addHelpOffer(helpOffer){
         throw new Error("Método não implementado (addHelpOffer())")
     }
 
-    addInterest(interest){
+    async addInterest(interest){
         throw new Error("Método não implementado (addInterest())")
     }
 
-    delHelpOffer(helpOffer){
+    async delHelpOffer(helpOffer){
         throw new Error("Método não implementado (delHelpOffer())")
     }
 
-    delInterest(interest){
+    async delInterest(interest){
         throw new Error("Método não implementado (delInterest())")
     }
 
-    getHelpOffers(){
+    async getHelpOffers(){
         throw new Error("Método não implementado (getHelpOffers())")
     }
 
-    getInterests(idHelpOffer){
+    async getInterests(idHelpOffer){
         throw new Error("Método não implementado (getInterests())")
     }
 }
