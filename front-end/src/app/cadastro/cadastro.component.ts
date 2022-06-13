@@ -82,11 +82,13 @@ export class CadastroComponent implements OnInit {
     this.ajuda.location = this.formAjuda.value.localizacao
     this.ajuda.description = this.formAjuda.value.descricao
     this.ajudaService.create(this.ajuda)
+    location.reload()
   }
 
   onSubmitInteressado(){
     this.interessado.idHelpOffer = this.formInteressado.value.idAjuda
     this.interessadoService.create(this.interessado)
+    location.reload()
   }
 
 }
