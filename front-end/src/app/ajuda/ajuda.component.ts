@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AjudaService } from 'src/services/ajudaService';
-import { Ajuda } from '../models/ajuda';
+import { AjudaResponse } from '../models/ajudaResponse';
+
 
 @Component({
   selector: 'app-ajuda',
@@ -9,12 +10,29 @@ import { Ajuda } from '../models/ajuda';
 })
 export class AjudaComponent implements OnInit {
 
-  aberto: boolean = true;
+  ajudas: AjudaResponse[];
 
-  constructor() { }
+  constructor(private ajudaService: AjudaService) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.ajudaService.get().subscribe(
+      (data) => {
+        let results = data as Array<any>
+          this.ajudas = results.map(
+            (ajuda) => {
+              return new AjudaResponse(
+                  ajuda.id, 
+                  ajuda.date, 
+                  ajuda.name, 
+                  ajuda.lastName, 
+                  ajuda.email, 
+                  ajuda.location, 
+                  ajuda.helpType, 
+                  ajuda.description, 
+                  ajuda.sex,
+                  ajuda.birth 
+                  )})
+      }
+    )
   }
-
 }

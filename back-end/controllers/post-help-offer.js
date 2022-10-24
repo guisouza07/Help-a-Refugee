@@ -10,18 +10,24 @@ export class CPostHelpOffer{
         this._ucAddHelpOffer= ucAddHelpOffer
     }
 
-    postHelpOffer(body){
+    async postHelpOffer(body){
         /*
             Estrutura do body:
             {
                 "announcerName" : "XXXXX",
+                "announcerSirName" : "XXXXX",
                 "location" : "localização",
                 "helpType" : "Housing" / "Job" / "Food",
-                "description" : "descrição"
+                "description" : "descrição",
+                "email" : "email@exemplo.com",
+                "sex" : "M",
+                "announcerBirth" : "2022-05-27T19:53:17.488-03:00"
             }
         */
-        const ho = new HelpOffer(-1, body.announcerName, DateTime.now(), body.location, body.helpType, body.description)
+        const ho = new HelpOffer(-1, body.announcerName, body.announcerSirName,
+            DateTime.now(), body.location, body.helpType, 
+            body.description, body.email, body.sex, body.announcerBirth)
 
-        return this._ucAddHelpOffer.addHelpOffer(ho)
+        return await this._ucAddHelpOffer.addHelpOffer(ho)
     }
 }

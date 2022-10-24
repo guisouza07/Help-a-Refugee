@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { AjudaRequest } from "src/app/models/ajudaRequest";
+import { InteressadoRequest} from "src/app/models/interessadoRequest";
 import { Injectable } from '@angular/core';
 import { environment } from "src/environments/environment";
 
@@ -7,11 +7,11 @@ import { environment } from "src/environments/environment";
   providedIn: 'root',
 })
 
-export class AjudaService{
+export class InteressadoService{
 
     private readonly apiURL = environment.apiURL;
-    private readonly routePost = '/help-offer';
-    private readonly routeGet = '/help-offers';
+    private readonly routePost = '/interest';
+    private readonly routeGet = '/interests';
 
     private header = {
         'Content-Type': 'application/json'
@@ -24,12 +24,8 @@ export class AjudaService{
     constructor(private http: HttpClient){
     }
 
-    get(){
-        return this.http.get(this.apiURL + this.routeGet)
-    }
-
-    create(ajuda: AjudaRequest){
-        return this.http.post(this.apiURL + this.routePost, ajuda, this.options)
+    create(interessado: InteressadoRequest){
+        return this.http.post(this.apiURL + this.routePost, interessado, this.options)
             .subscribe(
                 (data) => {
                     console.log(data)
@@ -39,5 +35,4 @@ export class AjudaService{
                 }
             )
     }
-
 }

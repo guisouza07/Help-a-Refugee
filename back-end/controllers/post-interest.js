@@ -10,16 +10,22 @@ export class CPostInterest{
         this._ucAddInterest = ucAddInterest
     }
 
-    postInterest(body){
+    async postInterest(body){
         /*
             Estrutura do body:
             {
                 "announcerName" : "XXXXX",
+                "announcerSirName" : "XXXXX",
                 "email" : "email@exemplo.com",
-                "idHelpOffer" : YY
+                "idHelpOffer" : YY,
+                "sex" : "M",
+                "announcerBirth" : "2022-05-27T19:53:17.488-03:00"
             }
         */
-        const interest = new Interest(-1, body.announcerName, DateTime.now(), body.email, body.idHelpOffer)
-        return this._ucAddInterest.addInterest(interest)
+        const interest = new Interest(-1, body.announcerName, 
+                                    body.announcerSirName, DateTime.now(), 
+                                    body.email, body.idHelpOffer,
+                                    body.sex, body.announcerBirth)
+        return await this._ucAddInterest.addInterest(interest)
     }
 }

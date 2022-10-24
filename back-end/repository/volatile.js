@@ -11,7 +11,7 @@ export class VolatileRepo extends Repository{
         this._interestsMaxId = 0
     }
 
-    addHelpOffer(helpOffer){
+    async addHelpOffer(helpOffer){
         if (!helpOffer instanceof HelpOffer){
             throw new Error(`Erro método Volatile.addHelpOffer. Tipo de parâmetro errado (${typeof(helpOffer)})`)
         }
@@ -19,13 +19,14 @@ export class VolatileRepo extends Repository{
             helpOffer.id = this._helpOffersMaxId + 1
             this._helpOffersMaxId += 1
         }
-        this._helpOffers.push({id: helpOffer.id, announcerName: helpOffer.announcerName,
+        this._helpOffers.push({id: helpOffer.id, announcerName: helpOffer.announcerName, announcerSirName: helpOffer.announcerSirName,
                                announceDate: helpOffer.announceDate, location: helpOffer.location,
-                               helpType: helpOffer.helpType, description: helpOffer.description})
+                               helpType: helpOffer.helpType, description: helpOffer.description, email: helpOffer.email,
+                               sex: helpOffer.sex, announcerBirth: helpOffer.announcerBirth})
         return this._helpOffersMaxId
     }
 
-    addInterest(interest){
+    async addInterest(interest){
         if (!interest instanceof Interest){
             throw new Error(`Erro método Volatile.addInterest. Tipo de parâmetro errado (${typeof(interest)})`)
         }
@@ -35,17 +36,17 @@ export class VolatileRepo extends Repository{
             this._interestsMaxId += 1
         }
 
-        this._interests.push({id: interest.id, announcerName: interest.announcerName,
+        this._interests.push({id: interest.id, announcerName: interest.announcerName, announcerSirName: interest.announcerSirName,
                               announceDate: interest.announceDate, email: interest.email,
-                              idHelpOffer: interest.idHelpOffer})
+                              idHelpOffer: interest.idHelpOffer, sex: interest.sex, announcerBirth: interest.announcerBirth})
         return this._interestsMaxId
     }
 
-    getHelpOffers(){
+    async getHelpOffers(){
         return this._helpOffers
     }
 
-    getInterests(idHelpOffer){
+    async getInterests(idHelpOffer){
         return this._interests.filter((value) => {return value.idHelpOffer === idHelpOffer})
     }
 }

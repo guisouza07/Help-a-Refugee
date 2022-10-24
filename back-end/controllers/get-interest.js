@@ -8,13 +8,13 @@ export class CGetInterests{
         this._ucConsultInterests = ucConsultInterests
     }
 
-    getInterest(body){
+    async getInterest(body){
         /*
             Estrutura do body:
             {
                 "id" : YY
             }
         */
-        return this._ucConsultInterests.consultInterests(body.id)
+        return await this._ucConsultInterests.consultInterests(body.id)
     }
 }
