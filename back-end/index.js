@@ -15,6 +15,7 @@ import { CPostInterest } from './controllers/post-interest.js'
 import { CGetInterests } from './controllers/get-interest.js'
 import { CGetHelpOffers } from './controllers/get-help-offer.js'
 
+const express = require("express");
 
 const app = express()
 app.use(express.json())
@@ -43,10 +44,11 @@ app.post('/interest', async (req, res) => {
     res.sendStatus(201).send(await cPostInterest.postInterest(req.body))
 })
 
-app.get('/help-offers', async (req, res) => {
-    res.send(await cGetHelpOffer.getHelpOffers(req.body))
+app.get("/hey-docker", async (req, res) => {
+    res.status(200).json({
+        mensagem: "Hey, Docker!!",
 })
-
+})
 app.get('/interests', async (req, res) => {
     res.send(await cGetInterests.getInterest(req.body))
 })
