@@ -1,0 +1,23 @@
+{
+  "name": "help-a-refugee",
+  "version": "1.0.0",
+  "description": "Vídeo de aprensentação do trabalho: https://youtu.be/Qlf2zpeFS6U",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guisouza07/Help-a-Refugee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guisouza07/Help-a-Refugee/issues"
+  },
+  "homepage": "https://github.com/guisouza07/Help-a-Refugee#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
