@@ -1,4 +1,4 @@
-import { HelpOffer } from "../models/help-offer.js"
+import { HelpOffer } from "./models/help-offer.js"
 import { UCAddHelpOffer } from "../usecases/add-help-offer.js"
 import { DateTime } from 'Luxon'
 

@@ -1,6 +1,6 @@
 import { Repository } from "./repository.js";
-import { HelpOffer } from '../models/help-offer.js'
-import { Interest } from '../models/interest.js'
+import { HelpOffer } from '../controllers/models/help-offer.js'
+import { Interest } from '../controllers/models/interest.js'
 
 export class VolatileRepo extends Repository{
     constructor(){

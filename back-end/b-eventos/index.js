@@ -1,22 +1,23 @@
-import {express} from 'express'
+import express from 'express'
 import cors from 'cors'
-import { UCAddHelpOffer } from './back-end/usecases/add-help-offer.js'
-import { UCAddInterest } from './back-end/usecases/add-interest.js'
-import { UCConsultInterest } from './back-end/usecases/consult-interests.js'
-import { UCConsultHelpOffer } from './back-end/usecases/consult-help-offers.js'
-import { VolatileRepo } from './back-end/repository/volatile.js'
-import { MongoDB } from './back-end/repository/mongodb.js'
-import { HelpOffer } from './back-end/models/help-offer.js'
-import { Interest } from './back-end/models/interest.js'
+import axios from 'axios'
+import { UCAddHelpOffer } from '../usecases/add-help-offer.js'
+import { UCAddInterest } from '../usecases/add-interest.js'
+import { UCConsultInterest } from '../usecases/consult-interests.js'
+import { UCConsultHelpOffer } from '../usecases/consult-help-offers.js'
+import { VolatileRepo } from '../../mss-a1/repository/volatile.js'
+import { MongoDB } from '../../mss-a1/repository/mongodb.js'
+import { HelpOffer } from '../controllers/models/help-offer.js'
+import { Interest } from '../controllers/models/interest.js'
 import { DateTime } from 'Luxon'
-import { HelpTypeEnum } from './back-end/enums/help-type.js'
-import { CPostHelpOffer } from './back-end/controllers/post-help-offer.js'
-import { CPostInterest } from './back-end/controllers/post-interest.js'
-import { CGetInterests } from './back-end/controllers/get-interest.js'
-import { CGetHelpOffers } from './back-end/controllers/get-help-offer.js'
+import { HelpTypeEnum } from '../enums/help-type.js'
+import { CPostHelpOffer } from '../controllers/post-help-offer.js'
+import { CPostInterest } from '../controllers/post-interest.js'
+import { CGetInterests } from '../controllers/get-interest.js'
+import { CGetHelpOffers } from '../controllers/get-help-offer.js'
 
 
-const express = require("express");
+
 
 const app = express()
 app.use(express.json())
@@ -55,5 +56,5 @@ app.get('/interests', async (req, res) => {
 })
 
 app.listen(8080, () => {
-    console.log('MSS Porta 8080')
+    console.log("Porta 8080")
 })

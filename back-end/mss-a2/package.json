@@ -1,8 +1,8 @@
 {
-  "name": "back-end",
+  "name": "mss-a2",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",

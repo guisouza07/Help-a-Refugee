@@ -1,5 +1,5 @@
 import { DateTime } from 'Luxon'
-import { HelpTypeEnum } from '../enums/help-type.js';
+import { HelpTypeEnum } from '../../enums/help-type.js';
 
 export class HelpOffer{
     constructor(id, announcerName, announcerSirName, announceDate, location, helpType, description, email, sex, announcerBirth){

@@ -1,4 +1,4 @@
-import { Repository } from "../repository/repository.js"
+import { Repository } from "../../mss-a1/repository/repository.js"
 
 export class UCConsultHelpOffer{
     constructor(repository){

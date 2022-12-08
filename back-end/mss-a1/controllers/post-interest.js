@@ -1,5 +1,5 @@
-import { Interest } from "../models/interest.js"
-import { UCAddInterest } from "../usecases/add-interest.js"
+import { Interest } from "./models/interest.js"
+import { UCAddInterest } from "../../back-end/usecases/add-interest.js"
 import { DateTime } from 'Luxon'
 
 export class CPostInterest{
