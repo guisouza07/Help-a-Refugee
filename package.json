@@ -19,5 +19,9 @@
   "homepage": "https://github.com/guisouza07/Help-a-Refugee#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
