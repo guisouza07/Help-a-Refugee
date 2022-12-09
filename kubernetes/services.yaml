@@ -7,15 +7,15 @@ spec:
 
   # A porta do serviço
   ports:
-    - name: barramento
+    - name: b-eventos
       port: 10080
       targetPort: 8080
       nodePort: 30080
-    - name: mss-pedidos
+    - name: mss-a1
       port: 10082
       targetPort: 8082
       nodePort: 30082
-    - name: mss-produtos
+    - name: mss-a2
       port: 10081
       targetPort: 8081
       nodePort: 30081

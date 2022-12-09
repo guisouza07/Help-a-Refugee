@@ -4,24 +4,24 @@ metadata:
     name: aplicacao
 spec:
   containers:
-    - name: barramento
-      image: barramento
+    - name: b-eventos
+      image: b-eventos
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 8080
       resources:
         limits:
           memory: 256Mi
-    - name: mss-pedidos
-      image: mss-pedidos
+    - name: mss-a1
+      image: mss-a1
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 8082
       resources:
         limits:
           memory: 256Mi
-    - name: mss-produtos
-      image: mss-produtos
+    - name: mss-a2
+      image: mss-a2
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 8081
