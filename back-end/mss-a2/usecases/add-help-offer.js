@@ -1,5 +1,5 @@
-import { Repository } from "../../mss-a1/repository/repository.js";
-import { HelpOffer } from "../controllers/models/help-offer.js.js";
+import { Repository } from "../repository/repository.js";
+import { HelpOffer } from "../models/help-offer.js.js";
 
 export class UCAddHelpOffer{
     constructor(repository){

@@ -1,5 +1,5 @@
-import { Repository } from "../../mss-a1/repository/repository.js";
-import { Interest } from "../controllers/models/interest.js";
+import { Repository } from "../repository/repository.js";
+import { Interest } from "../models/interest.js";
 
 export class UCAddInterest{
     constructor(repository){

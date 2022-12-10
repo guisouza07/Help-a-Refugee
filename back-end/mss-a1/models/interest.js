@@ -1,29 +1,7 @@
-import { DateTime } from 'Luxon'
+
 
 export class Interest{
     constructor(id, announcerName, announcerSirName, announceDate, email, idHelpOffer, sex, announcerBirth){
-        //Validações de parâmetros
-        if (!announcerName instanceof String){
-            throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro announceName (${typeof(announceName)})`);
-        }
-        if (!announcerSirName instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerSirName (${typeof(announcerSirName)})`);
-        }
-        if (!announceDate instanceof DateTime){
-            throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro announceDate (${typeof(announceDate)})`);
-        }
-        if (!email instanceof String){
-            throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro email (${typeof(email)})`);
-        }
-        if (!idHelpOffer instanceof Number){
-            throw new Error(`Erro construtor Interest. Tipo incorreto para o parâmetro idHelpOffer (${typeof(idHelpOffer)})`);
-        }
-        if (!sex instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro sexo (${typeof(sex)})`);
-        }
-        if (!announcerBirth instanceof DateTime){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerBirth (${typeof(announcerBirth)})`);
-        }
 
         this._id = id
         this._announcerName = announcerName

@@ -1,4 +1,4 @@
-import { UCConsultInterest } from "../../mss-a1/usecases/consult-interests.js"
+import { UCConsultInterest } from "../usecases/consult-interests.js"
 
 export class CGetInterests{
     constructor(ucConsultInterests){

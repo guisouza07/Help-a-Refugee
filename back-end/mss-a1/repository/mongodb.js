@@ -1,9 +1,7 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import { DateTime } from 'Luxon'
 import { Repository } from './repository.js'
-import { HelpOffer } from '../controllers/models/help-offer.js'
-import { Interest } from '../controllers/models/interest.js'
+
 
 dotenv.config()
 

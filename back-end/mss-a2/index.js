@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
-import { UCAddHelpOffer } from '../usecases/add-help-offer.js'
+
+import { UCAddHelpOffer } from 'back-end\mss-a2\usecases\add-help-offer.js\add-help-offer.js'
 import { UCAddInterest } from '../usecases/add-interest.js'
 import { UCConsultInterest } from '../usecases/consult-interests.js'
 import { UCConsultHelpOffer } from '../usecases/consult-help-offers.js'

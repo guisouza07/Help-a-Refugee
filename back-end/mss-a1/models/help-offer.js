@@ -1,36 +1,7 @@
-import { DateTime } from 'Luxon'
-import { HelpTypeEnum } from '../../enums/help-type.js';
+
 
 export class HelpOffer{
     constructor(id, announcerName, announcerSirName, announceDate, location, helpType, description, email, sex, announcerBirth){
-        //Validações de parâmetros
-        if (!announcerName instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerName (${typeof(announcerName)})`);
-        }
-        if (!announcerSirName instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerSirName (${typeof(announcerSirName)})`);
-        }
-        if (!announceDate instanceof DateTime){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announceDate (${typeof(announceDate)})`);
-        }
-        if (!location instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro location (${typeof(location)})`);
-        }
-        if (!helpType instanceof HelpTypeEnum){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro helpType (${typeof(helpType)})`);
-        }
-        if (!description instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro description (${typeof(description)})`);
-        }
-        if (!email instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro email (${typeof(email)})`);
-        }
-        if (!sex instanceof String){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro sexo (${typeof(sex)})`);
-        }
-        if (!announcerBirth instanceof DateTime){
-            throw new Error(`Erro construtor HelpOffer. Tipo incorreto para o parâmetro announcerBirth (${typeof(announcerBirth)})`);
-        }
 
         this._id = id
         this._announcerName = announcerName
